@@ -11,8 +11,7 @@ client = TwilioMonitorClient(account_sid, auth_token)
 
 events = client.events.list(
     start_date=datetime(2015, 3, 1, tzinfo=pytz.UTC).isoformat(),
-    end_date=datetime(2015, 4, 1, tzinfo=pytz.UTC).isoformat(),
-)
+    end_date=datetime(2015, 4, 1, tzinfo=pytz.UTC).isoformat(), )
 
 for e in events:
     print(e.description)

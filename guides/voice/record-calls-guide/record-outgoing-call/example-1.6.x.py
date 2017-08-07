@@ -10,7 +10,6 @@ call = client.calls.create(
     "+14155551212",
     "+15017250604",
     url="http://demo.twilio.com/docs/voice.xml",
-    record=True
-)
+    record=True)
 
 print(call.sid)

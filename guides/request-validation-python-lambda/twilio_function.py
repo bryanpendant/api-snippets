@@ -23,16 +23,14 @@ def handler(event, context):
             and event['Body'].lower() == "secret":
 
         form_parameters = {
-            k: urllib.unquote_plus(v) for k, v in event.items()
-            if k != u'twilioSignature'
+            k: urllib.unquote_plus(v)
+            for k, v in event.items() if k != u'twilioSignature'
         }
 
         validator = RequestValidator(os.environ['AUTH_TOKEN'])
-        request_valid = validator.validate(
-            os.environ['REQUEST_URL'],
-            form_parameters,
-            event[u'twilioSignature']
-        )
+        request_valid = validator.validate(os.environ['REQUEST_URL'],
+                                           form_parameters,
+                                           event[u'twilioSignature'])
 
         # print("Form params:",form_parameters,"validity:",request_valid)
         # If the request is valid and this is from the master number,

@@ -7,7 +7,6 @@ token = "your_auth_token"
 client = Client(account, token)
 
 service = client.chat.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX").update(
-    friendly_name="NEW_FRIENDLY_NAME"
-)
+    friendly_name="NEW_FRIENDLY_NAME")
 
 print(service.friendly_name)

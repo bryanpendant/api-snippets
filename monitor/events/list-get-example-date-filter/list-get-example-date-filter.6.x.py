@@ -11,8 +11,7 @@ client = Client(account_sid, auth_token)
 
 events = client.monitor.events.list(
     start_date=datetime(2015, 3, 1, tzinfo=pytz.UTC),
-    end_date=datetime(2015, 4, 1, tzinfo=pytz.UTC),
-)
+    end_date=datetime(2015, 4, 1, tzinfo=pytz.UTC), )
 
 for e in events:
     print(e.description)

@@ -6,7 +6,7 @@ from twilio.task_router.workflow_config import WorkflowConfig
 
 # Your Account Sid and Auth Token from twilio.com/user/account
 account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-auth_token  = "your_auth_token"
+auth_token = "your_auth_token"
 workspace_sid = "WSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 client = TwilioTaskRouterClient(account_sid, auth_token)
@@ -46,7 +46,6 @@ workflow = client.workflows(workspace_sid).create(
     assignment_callback_url='http://example.com',
     fallback_assignment_callback_url='http://example2.com',
     task_reservation_timeout='30',
-    configuration=json
-)
+    configuration=json)
 
 print(workflow.friendly_name)

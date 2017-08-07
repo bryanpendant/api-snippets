@@ -7,7 +7,6 @@ token = "your_auth_token"
 client = Client(account, token)
 
 service = client.chat.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX").update(
-    reachability_enabled=True
-)
+    reachability_enabled=True)
 
 print(service.reachability_enabled)

@@ -7,8 +7,11 @@ auth_token = 'your_auth_token'
 
 client = Client(account_sid, auth_token)
 
-client.wireless.commands\
+callback_url = 'https://sim-manager.mycompany.com' + \
+    '/commands/mobile-terminated-command-callback'
+
+client.wireless.commands \
     .create(command='SGVsbG8sIE1hY2hpbmUh==',
             command_mode='binary',
             sim='AliceSmithSmartMeter',
-            callback_url='https://sim-manager.mycompany.com/commands/mobile-terminated-command-callback')
+            callback_url=callback_url)

@@ -13,7 +13,6 @@ client = TwilioMonitorClient(account_sid, auth_token)
 alerts = client.alerts.list(
     start_date=datetime(2015, 4, 1, tzinfo=pytz.UTC).isoformat(),
     end_date=datetime(2015, 4, 30, 23, 59, 59, tzinfo=pytz.UTC).isoformat(),
-    log_level="warning"
-)
+    log_level="warning")
 for alert in alerts:
     print(alert.alert_text)

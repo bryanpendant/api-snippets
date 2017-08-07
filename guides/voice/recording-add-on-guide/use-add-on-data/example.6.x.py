@@ -39,14 +39,16 @@ def callback():
     if 'ibm_watson_speechtotext' not in add_ons['results']:
         return 'Add Watson Speech to Text add-on in your Twilio console'
 
-    payload_url = add_ons["results"]["ibm_watson_speechtotext"]["payload"][0]["url"]
+    payload_url = add_ons["results"]["ibm_watson_speechtotext"]["payload"][0][
+        "url"]
 
     account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
     auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
     resp = requests.get(payload_url, auth=(account_sid, auth_token)).json()
 
     results = resp['results'][0]['results']
-    transcripts = map(lambda res: res['alternatives'][0]['transcript'], results)
+    transcripts = map(lambda res: res['alternatives'][0]['transcript'],
+                      results)
 
     return ''.join(transcripts)
 

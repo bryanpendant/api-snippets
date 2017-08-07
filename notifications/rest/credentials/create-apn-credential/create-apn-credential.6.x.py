@@ -13,7 +13,6 @@ credential = client.notify.credentials.create(
     friendly_name="MyAPNCredential",
     certificate="cert.pem_content",
     private_key="key.pem_content",
-    sandbox="true"
-)
+    sandbox="true")
 
 print(credential.friendly_name)

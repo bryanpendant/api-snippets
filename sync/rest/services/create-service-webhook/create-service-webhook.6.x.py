@@ -8,7 +8,6 @@ client = Client(account_sid, auth_token)
 
 service = client.sync.services.create(
     friendly_name="MySyncServiceInstance",
-    webhook_url="https://example.com/sync"
-)
+    webhook_url="https://example.com/sync")
 
 print(service.sid)

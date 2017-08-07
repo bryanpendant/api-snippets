@@ -8,7 +8,7 @@ workspace_sid = "WSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 client = Client(account_sid, auth_token)
 events = client.taskrouter.workspaces(workspace_sid) \
-                                  .events.list()
+    .events.list()
 
 for event in events:
     print(event.event_type)

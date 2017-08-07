@@ -16,20 +16,22 @@ everyone_queue_sid = "WQXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 config = {
     'task_routing': {
-        'filters': [
-            {
-                'expression': "type=='sales'",
-                'targets': [{'queue': sales_queue_sid}]
-            },
-            {
-                'expression': "type=='marketing'",
-                'targets': [{'queue': marketing_queue_sid}]
-            },
-            {
-                'expression': "type=='support'",
-                'targets': [{'queue': support_queue_sid}]
-            }
-        ],
+        'filters': [{
+            'expression': "type=='sales'",
+            'targets': [{
+                'queue': sales_queue_sid
+            }]
+        }, {
+            'expression': "type=='marketing'",
+            'targets': [{
+                'queue': marketing_queue_sid
+            }]
+        }, {
+            'expression': "type=='support'",
+            'targets': [{
+                'queue': support_queue_sid
+            }]
+        }],
         'default_filter': {
             'queue': everyone_queue_sid
         }
@@ -41,7 +43,6 @@ workflow = client.taskrouter.workspaces(workspace_sid).workflows.create(
     assignment_callback_url='http://example.com',
     fallback_assignment_callback_url='http://example2.com',
     task_reservation_timeout='30',
-    configuration=json.dumps(config)
-)
+    configuration=json.dumps(config))
 
 print(workflow.friendly_name)

@@ -7,7 +7,6 @@ token = "your_auth_token"
 client = Client(account, token)
 
 user = client.chat.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX").users.create(
-    identity="IDENTITY"
-)
+    identity="IDENTITY")
 
 print(user.identity)

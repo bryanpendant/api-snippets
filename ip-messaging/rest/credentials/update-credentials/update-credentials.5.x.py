@@ -10,7 +10,6 @@ credential = client.credentials.update(
     "CRXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
     "gcm",
     api_key="xxxxx",
-    friendly_name="my credential"
-)
+    friendly_name="my credential")
 
 print(credential.friendly_name)

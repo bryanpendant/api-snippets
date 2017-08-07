@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from twilio import twiml
+from . import validate_twilio_request
+
 
 @require_POST
 @csrf_exempt
@@ -23,6 +25,7 @@ def incoming_call(request):
 
     # Return the TwiML
     return HttpResponse(resp)
+
 
 @require_POST
 @csrf_exempt

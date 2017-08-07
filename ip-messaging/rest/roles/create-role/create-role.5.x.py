@@ -11,6 +11,5 @@ service = client.services.get(sid="ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 role = service.roles.create(
     friendly_name="new_role",
     role_type="deployment",
-    permission=["createChannel", "joinChannel"]
-)
+    permission=["createChannel", "joinChannel"])
 print(role)

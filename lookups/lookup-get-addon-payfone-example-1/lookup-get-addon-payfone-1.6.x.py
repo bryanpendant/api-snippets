@@ -13,8 +13,7 @@ number = client.lookups.phone_numbers("+15108675309").fetch(
         "payfone_tcpa_compliance": {
             "RightPartyContactedDate": "20160101"
         }
-    }
-)
+    })
 
 print(number.carrier['type'])
 print(number.carrier['name'])

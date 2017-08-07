@@ -9,11 +9,11 @@ account = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 token = "your_auth_token"
 client = Client(account, token)
 
-bindings = client.notify.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX").bindings \
+bindings = client.notify.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX") \
+    .bindings \
     .list(
         tag="new user",
-        start_date=datetime.strptime("2015-08-25", "%Y-%m-%d")
-    )
+        start_date=datetime.strptime("2015-08-25", "%Y-%m-%d"))
 
 for binding in bindings:
     print(binding.sid)

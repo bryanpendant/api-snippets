@@ -9,7 +9,6 @@ client = Client(account_sid, auth_token)
 
 number = client.api.account.incoming_phone_numbers.create(
     voice_url="http://demo.twilio.com/docs/voice.xml",
-    phone_number="+15005550006"
-)
+    phone_number="+15005550006")
 
 print(number.sid)

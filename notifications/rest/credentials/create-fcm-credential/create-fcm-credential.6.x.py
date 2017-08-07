@@ -9,7 +9,4 @@ token = "your_auth_token"
 client = Client(account, token)
 
 credential = client.notify.credentials.create(
-    type="fcm",
-    friendly_name="MyFCMCredential",
-    secret="fcm_secret"
-)
+    type="fcm", friendly_name="MyFCMCredential", secret="fcm_secret")

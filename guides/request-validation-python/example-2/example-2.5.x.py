@@ -1,8 +1,9 @@
 from flask import Flask, request
 from twilio import twiml
-
+from . import validate_twilio_request
 
 app = Flask(__name__)
+
 
 @app.route('/voice', methods=['POST'])
 @validate_twilio_request
@@ -24,6 +25,7 @@ def incoming_call():
     # Return the TwiML
     return str(resp)
 
+
 @app.route('/message', methods=['POST'])
 @validate_twilio_request
 def incoming_message():
@@ -38,6 +40,7 @@ def incoming_message():
 
     # Return the TwiML
     return str(resp)
-    
+
+
 if __name__ == '__main__':
     app.run(debug=True)

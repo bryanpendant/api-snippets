@@ -8,7 +8,6 @@ client = Client(account_sid, auth_token)
 
 trigger = client.usage.triggers("UT33c6aeeba34e48f38d6899ea5b765ad4").update(
     friendly_name="Monthly Maximum Call Usage",
-    callback_url="https://www.example.com/monthly-usage-trigger"
-)
+    callback_url="https://www.example.com/monthly-usage-trigger")
 
 print(trigger.date_fired)

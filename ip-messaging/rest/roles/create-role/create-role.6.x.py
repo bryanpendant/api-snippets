@@ -10,7 +10,6 @@ client = Client(account, token)
 role = client.chat.services("ISXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX").roles.create(
     friendly_name="new_role",
     type="deployment",
-    permission=["createChannel", "joinChannel"]
-)
+    permission=["createChannel", "joinChannel"])
 
 print(role.sid)

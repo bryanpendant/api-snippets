@@ -3,8 +3,8 @@ from twilio import twiml
 
 import json
 
-
 app = Flask(__name__)
+
 
 @app.route("/voice", methods=['GET', 'POST'])
 def call():
@@ -49,6 +49,7 @@ def call():
     response.hangup()
 
     return str(response)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

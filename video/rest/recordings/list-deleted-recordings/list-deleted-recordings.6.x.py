@@ -7,8 +7,8 @@ api_key_secret = "your_api_key_secret"
 client = Client(api_key_sid, api_key_secret)
 
 recordings = client.video \
-             .recordings \
-             .list(status='deleted')
+    .recordings \
+    .list(status='deleted')
 
 for recording in recordings:
     print(recording.sid)

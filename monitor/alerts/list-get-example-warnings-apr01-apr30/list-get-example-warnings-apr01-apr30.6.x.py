@@ -12,7 +12,6 @@ client = Client(account_sid, auth_token)
 alerts = client.monitor.alerts.list(
     start_date=datetime(2015, 4, 1, tzinfo=pytz.UTC),
     end_date=datetime(2015, 4, 30, 23, 59, 59, tzinfo=pytz.UTC),
-    log_level="warning"
-)
+    log_level="warning")
 for alert in alerts:
     print(alert.alert_text)

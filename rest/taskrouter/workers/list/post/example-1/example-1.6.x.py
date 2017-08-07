@@ -9,7 +9,6 @@ workspace_sid = "WSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 client = Client(account_sid, auth_token)
 
 worker = client.taskrouter.workspaces(workspace_sid).workers.create(
-    friendly_name='Support Worker 1', attributes='{"type":"support"}'
-)
+    friendly_name='Support Worker 1', attributes='{"type":"support"}')
 
 print(worker.friendly_name)

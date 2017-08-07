@@ -12,8 +12,7 @@ numbers = client.phone_numbers.search(
     country="US",
     contains="555",
     in_region="CA",
-    type="local"
-)
+    type="local")
 
 # Purchase the first number in the list
 if numbers:
