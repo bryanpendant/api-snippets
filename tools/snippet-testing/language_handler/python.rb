@@ -4,8 +4,8 @@ module LanguageHandler
   class Python < BaseHandler
     LANG_CNAME = 'py'.freeze
 
-    def self.run_before_test
-      Dir.chdir(ROOT_FOLDER) do
+    def self.run_before_test(directory)
+      Dir.chdir(directory) do
         output = `yapf -i --exclude='./venv/*' -r . && flake8`
         if $? != 0
           abort(output)
